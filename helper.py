@@ -5,16 +5,27 @@ from collections import Counter
 import emoji
 import matplotlib.pyplot as plt
 import matplotlib.font_manager as fm
+import os
 
 # Initialize URL extractor
 extract = URLExtract()
 
 # Configure Matplotlib to use a font that supports emojis
 def configure_matplotlib():
-    # Path to an emoji-compatible font (Windows example)
-    font_path = 'C:/Windows/Fonts/seguiemj.ttf'  # Path to Segoe UI Emoji font
-    prop = fm.FontProperties(fname=font_path)
-    plt.rcParams['font.family'] = prop.get_name()
+    # Determine the font path based on the operating system
+    if os.name == 'nt':  # Windows
+        font_path = 'C:/Windows/Fonts/seguiemj.ttf'
+    else:  # Unix-like
+        # Use a common fallback font or specify a path if you have one
+        font_path = '/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
+    
+    # Check if the font path exists
+    if os.path.exists(font_path):
+        prop = fm.FontProperties(fname=font_path)
+        plt.rcParams['font.family'] = prop.get_name()
+    else:
+        print(f"Font not found at {font_path}. Using default font.")
+        plt.rcParams['font.family'] = 'sans-serif'
 
 # Call the configuration function
 configure_matplotlib()
