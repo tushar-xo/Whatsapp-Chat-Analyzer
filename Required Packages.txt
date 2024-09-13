@@ -1,0 +1,20 @@
+These are the required packages to install beforehand :
+
+NOTE : The project was ran on Python 3.7
+
+Required Packages and Installation Commands:
+Streamlit
+Matplotlib
+Seaborn
+Urlextract
+Wordcloud
+Pandas
+Emoji
+
+echo "- Streamlit:\n  \`pip install streamlit\`\n" > install_packages.txt
+echo "- Matplotlib:\n  \`pip install matplotlib\`\n" >> install_packages.txt
+echo "- Seaborn:\n  \`pip install seaborn\`\n" >> install_packages.txt
+echo "- Urlextract:\n  \`pip install urlextract\`\n" >> install_packages.txt
+echo "- Wordcloud:\n  \`pip install wordcloud\`\n" >> install_packages.txt
+echo "- Pandas:\n  \`pip install pandas\`\n" >> install_packages.txt
+echo "- Emoji:\n  \`pip install emoji\`\n" >> install_packages.txt
